@@ -4,7 +4,7 @@
 	import clsx from 'clsx';
 
 	const WORD_LENGTH = Math.round(Math.E);
-	const ATTEMPTS = 6;
+	const ATTEMPTS = 10;
 	const LETTERS = [
 		'E',
 		'Ē',
