@@ -53,9 +53,6 @@
 {/snippet}
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
-	{currentText}
-	{current}
-
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
 		{#each Array(30) as _, index}
 			<div class="flex size-15 items-center justify-center rounded border text-2xl">
