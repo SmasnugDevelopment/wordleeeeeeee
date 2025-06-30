@@ -3,7 +3,7 @@
 	import Delete from '@lucide/svelte/icons/delete';
 	import clsx from 'clsx';
 
-	const WORD_LENGTH = 3;
+	const WORD_LENGTH = Math.round(Math.E);
 	const ATTEMPTS = 6;
 	const LETTERS = [
 		'E',
