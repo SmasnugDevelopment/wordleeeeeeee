@@ -58,7 +58,7 @@
 
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
 		{#each Array(30) as _, index}
-			<div class="size-15 rounded border">
+			<div class="flex size-15 items-center justify-center rounded border text-2xl">
 				{Math.floor(index / 5) == current
 					? currentText[index - Math.floor(index / 5) * 5]
 					: attempts[Math.floor(index / 5)] &&
