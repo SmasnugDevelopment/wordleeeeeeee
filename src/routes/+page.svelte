@@ -35,6 +35,10 @@
 	];
 </script>
 
+{#snippet Key(key: string)}
+	<Button>{key}</Button>
+{/snippet}
+
 <div class="flex h-screen w-screen flex-col items-center justify-center">
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
 		{#each Array(30)}
@@ -43,19 +47,19 @@
 	</div>
 	<div class="flex flex-row">
 		{#each es.slice(0, 11) as key}
-			<Button>{key}</Button>
+			{@render Key(key)}
 		{/each}
 	</div>
 
 	<div class="flex flex-row">
 		{#each es.slice(11, 21) as key}
-			<Button>{key}</Button>
+			{@render Key(key)}
 		{/each}
 	</div>
 
 	<div class="flex flex-row">
 		{#each es.slice(21, es.length) as key}
-			<Button>{key}</Button>
+			{@render Key(key)}
 		{/each}
 	</div>
 </div>
