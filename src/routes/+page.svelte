@@ -38,9 +38,9 @@
 		'🄴'
 	];
 
-	let word = $state('');
+	let word = $state([]) as string[];
 	for (let i = 0; i < WORD_LENGTH; i++) {
-		word += LETTERS[Math.floor(Math.random() * LETTERS.length)];
+		word.push(LETTERS[Math.floor(Math.random() * LETTERS.length)]);
 	}
 
 	let attempts = $state([]) as string[][];
@@ -66,7 +66,18 @@
 		{#each Array(ATTEMPTS) as _, attempt}
 			<div class="flex flex-row gap-2">
 				{#each Array(WORD_LENGTH) as _, letter}
-					<div class="flex size-15 items-center justify-center rounded border text-2xl">
+					<div
+						class={clsx(
+							'flex size-15 items-center justify-center rounded border text-2xl',
+							attempts[attempt] && attempts[attempt][letter] === word[letter] && 'bg-green-400/25',
+							attempts[attempt] &&
+								attempts[attempt][letter] !== word[letter] &&
+								word.includes(attempts[attempt][letter]) &&
+								'bg-yellow-400/25',
+
+							attempts[attempt] && attempts[attempt][letter] !== word[letter] && 'bg-gray-400/25'
+						)}
+					>
 						{attempt == current
 							? currentText[letter]
 							: attempts[attempt] && attempts[attempt][letter]}
