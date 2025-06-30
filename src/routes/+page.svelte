@@ -82,6 +82,7 @@
 		<div class="flex flex-row gap-2">
 			<Button
 				class="h-full w-20"
+				disabled={currentText.length !== 5}
 				onclick={() => {
 					if (currentText.length === 5) {
 						attempts.push(currentText);
@@ -95,6 +96,7 @@
 			{/each}
 			<Button
 				class="h-full w-20"
+				disabled={currentText.length === 0}
 				onclick={() => {
 					currentText.pop();
 				}}
