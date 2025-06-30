@@ -5,8 +5,7 @@
 
 	const WORD_LENGTH = 5;
 	const ATTEMPTS = 6;
-
-	let es = [
+	const LETTERS = [
 		'E',
 		'Ē',
 		'É',
@@ -41,7 +40,7 @@
 
 	let word = $state('');
 	for (let i = 0; i < WORD_LENGTH; i++) {
-		word += es[Math.floor(Math.random() * es.length)];
+		word += LETTERS[Math.floor(Math.random() * LETTERS.length)];
 	}
 
 	let attempts = $state([]) as string[][];
@@ -81,13 +80,13 @@
 	</div>
 	<div class="flex flex-col items-center gap-2">
 		<div class="flex flex-row gap-2">
-			{#each es.slice(0, 11) as key}
+			{#each LETTERS.slice(0, 11) as key}
 				{@render Key(key)}
 			{/each}
 		</div>
 
 		<div class="flex flex-row gap-2">
-			{#each es.slice(11, 21) as key}
+			{#each LETTERS.slice(11, 21) as key}
 				{@render Key(key)}
 			{/each}
 		</div>
@@ -104,7 +103,7 @@
 					}
 				}}>Enter</Button
 			>
-			{#each es.slice(21, es.length) as key}
+			{#each LETTERS.slice(21, LETTERS.length) as key}
 				{@render Key(key)}
 			{/each}
 			<Button
