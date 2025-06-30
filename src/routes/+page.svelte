@@ -37,8 +37,10 @@
 
 	let attempts = $state([]);
 	let current = $state(0);
-	let currentText = $state('');
+	let currentText = $state([]) as string[];
 </script>
+
+{currentText}
 
 {#snippet Key(key: string)}
 	<Button
@@ -46,7 +48,7 @@
 		class="block h-12 w-10 p-0 text-xl"
 		onclick={() => {
 			if (currentText.length !== 5) {
-				currentText += key;
+				currentText.push(key);
 			}
 		}}>{key}</Button
 	>
@@ -76,7 +78,12 @@
 			{#each es.slice(21, es.length) as key}
 				{@render Key(key)}
 			{/each}
-			<Button class="h-full w-20">
+			<Button
+				class="h-full w-20"
+				onclick={() => {
+					currentText.pop();
+				}}
+			>
 				<Delete />
 			</Button>
 		</div>
