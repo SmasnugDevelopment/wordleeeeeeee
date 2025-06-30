@@ -37,7 +37,7 @@
 </script>
 
 {#snippet Key(key: string)}
-	<Button variant="outline" class="block h-12 w-10 p-0">{key}</Button>
+	<Button variant="outline" class="block h-12 w-10 p-0 text-xl">{key}</Button>
 {/snippet}
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
