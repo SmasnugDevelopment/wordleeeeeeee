@@ -97,6 +97,7 @@
 			<Button
 				class="h-full w-20"
 				disabled={currentText.length === 0}
+				variant="destructive"
 				onclick={() => {
 					currentText.pop();
 				}}
