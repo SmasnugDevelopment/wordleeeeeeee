@@ -54,7 +54,7 @@
 		variant="outline"
 		class="block h-12 w-10 p-0 text-xl"
 		onclick={() => {
-			if (currentText.length !== 5) {
+			if (currentText.length !== WORD_LENGTH) {
 				currentText.push(key);
 			}
 		}}>{key}</Button
@@ -63,15 +63,19 @@
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
 	{word}
-	<div class={clsx('grid h-fit w-fit gap-2', 'grid-cols-' + WORD_LENGTH)}>
-		{#each Array(ATTEMPTS * WORD_LENGTH) as _, index}
-			<div class="flex size-15 items-center justify-center rounded border text-2xl">
-				{Math.floor(index / WORD_LENGTH) == current
-					? currentText[index - Math.floor(index / WORD_LENGTH) * WORD_LENGTH]
-					: attempts[Math.floor(index / WORD_LENGTH)] &&
-						attempts[Math.floor(index / WORD_LENGTH)][
-							index - Math.floor(index / WORD_LENGTH) * WORD_LENGTH
-						]}
+	<div class="flex h-fit w-fit flex-col gap-2">
+		{#each Array(ATTEMPTS)}
+			<div class="flex flex-row gap-2">
+				{#each Array(WORD_LENGTH) as _, index}
+					<div class="flex size-15 items-center justify-center rounded border text-2xl">
+						{Math.floor(index / WORD_LENGTH) == current
+							? currentText[index - Math.floor(index / WORD_LENGTH) * WORD_LENGTH]
+							: attempts[Math.floor(index / WORD_LENGTH)] &&
+								attempts[Math.floor(index / WORD_LENGTH)][
+									index - Math.floor(index / WORD_LENGTH) * WORD_LENGTH
+								]}
+					</div>
+				{/each}
 			</div>
 		{/each}
 	</div>
