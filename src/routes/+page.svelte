@@ -40,7 +40,7 @@
 	<Button variant="outline" class="block h-12 w-10 p-0">{key}</Button>
 {/snippet}
 
-<div class="flex h-screen w-screen flex-col items-center justify-center">
+<div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
 		{#each Array(30)}
 			<div class="size-15 rounded border"></div>
