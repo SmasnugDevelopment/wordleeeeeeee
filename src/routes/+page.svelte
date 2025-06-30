@@ -10,22 +10,11 @@
 		'Ē',
 		'É',
 		'Ě',
-		'È',
-		'Ê',
 		'Ę',
-		'Ë',
 		'Ė',
 		'Ẹ',
 		'Ẽ',
-		'Ḗ',
-		'Ể',
-		'Ẻ',
-		'Ệ',
-		'Ế',
-		'Ễ',
 		'Є',
-		'Ё̄',
-		'Ҽ',
 		'ⱻ',
 		'€',
 		'℮',
@@ -87,13 +76,13 @@
 	</div>
 	<div class="flex flex-col items-center gap-2">
 		<div class="flex flex-row gap-2">
-			{#each LETTERS.slice(0, 11) as key}
+			{#each LETTERS.slice(0, 7) as key}
 				{@render Key(key)}
 			{/each}
 		</div>
 
 		<div class="flex flex-row gap-2">
-			{#each LETTERS.slice(11, 21) as key}
+			{#each LETTERS.slice(7, 15) as key}
 				{@render Key(key)}
 			{/each}
 		</div>
@@ -110,7 +99,7 @@
 					}
 				}}>Enter</Button
 			>
-			{#each LETTERS.slice(21, LETTERS.length) as key}
+			{#each LETTERS.slice(15, LETTERS.length) as key}
 				{@render Key(key)}
 			{/each}
 			<Button
