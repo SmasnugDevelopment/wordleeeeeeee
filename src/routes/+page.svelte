@@ -35,12 +35,10 @@
 		'🄴'
 	];
 
-	let attempts = $state([]);
-	let current = $state(0);
+	let attempts = $state([]) as string[][];
+	let current = $state(0) as number;
 	let currentText = $state([]) as string[];
 </script>
-
-{currentText}
 
 {#snippet Key(key: string)}
 	<Button
@@ -55,9 +53,17 @@
 {/snippet}
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
+	{currentText}
+	{current}
+
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
-		{#each Array(30)}
-			<div class="size-15 rounded border"></div>
+		{#each Array(30) as _, index}
+			<div class="size-15 rounded border">
+				{Math.floor(index / 5) == current
+					? currentText[index - Math.floor(index / 5) * 5]
+					: attempts[Math.floor(index / 5)] &&
+						attempts[Math.floor(index / 5)][index - Math.floor(index / 5) * 5]}
+			</div>
 		{/each}
 	</div>
 	<div class="flex flex-col items-center gap-2">
@@ -74,7 +80,16 @@
 		</div>
 
 		<div class="flex flex-row gap-2">
-			<Button class="h-full w-20">Enter</Button>
+			<Button
+				class="h-full w-20"
+				onclick={() => {
+					if (currentText.length === 5) {
+						attempts.push(currentText);
+						currentText = [];
+						current++;
+					}
+				}}>Enter</Button
+			>
 			{#each es.slice(21, es.length) as key}
 				{@render Key(key)}
 			{/each}
