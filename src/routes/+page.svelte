@@ -35,6 +35,11 @@
 		'🄴'
 	];
 
+	let word = $state('');
+	for (let i = 0; i < 5; i++) {
+		word += es[Math.floor(Math.random() * es.length)];
+	}
+
 	let attempts = $state([]) as string[][];
 	let current = $state(0) as number;
 	let currentText = $state([]) as string[];
@@ -53,6 +58,7 @@
 {/snippet}
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
+	{word}
 	<div class="grid h-fit w-fit grid-cols-5 gap-2">
 		{#each Array(30) as _, index}
 			<div class="flex size-15 items-center justify-center rounded border text-2xl">
