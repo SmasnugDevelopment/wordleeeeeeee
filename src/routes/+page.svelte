@@ -4,6 +4,7 @@
 	import clsx from 'clsx';
 
 	const WORD_LENGTH = 5;
+	const ATTEMPTS = 6;
 
 	let es = [
 		'E',
@@ -63,7 +64,7 @@
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
 	{word}
 	<div class={clsx('grid h-fit w-fit gap-2', 'grid-cols-' + WORD_LENGTH)}>
-		{#each Array(30) as _, index}
+		{#each Array(ATTEMPTS * WORD_LENGTH) as _, index}
 			<div class="flex size-15 items-center justify-center rounded border text-2xl">
 				{Math.floor(index / WORD_LENGTH) == current
 					? currentText[index - Math.floor(index / WORD_LENGTH) * WORD_LENGTH]
