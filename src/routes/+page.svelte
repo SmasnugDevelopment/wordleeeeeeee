@@ -88,6 +88,7 @@
 					attempts = [];
 					currentText = [];
 					current = 0;
+					word = [];
 					setup();
 				}}>Retry</Button
 			>
