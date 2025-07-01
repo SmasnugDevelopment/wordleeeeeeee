@@ -49,6 +49,16 @@
 	>
 {/snippet}
 
+<svelte:window
+	onkeypress={(event) => {
+		if (event.key == 'e') {
+			if (currentText.length !== WORD_LENGTH) {
+				currentText.push('E');
+			}
+		}
+	}}
+/>
+
 <svelte:head>
 	<title>Wordleeeeeeee</title>
 </svelte:head>
