@@ -29,9 +29,12 @@
 	];
 
 	let word = $state([]) as string[];
-	for (let i = 0; i < WORD_LENGTH; i++) {
-		word.push(LETTERS[Math.floor(Math.random() * LETTERS.length)]);
+	function setup() {
+		for (let i = 0; i < WORD_LENGTH; i++) {
+			word.push(LETTERS[Math.floor(Math.random() * LETTERS.length)]);
+		}
 	}
+	setup();
 
 	let attempts = $state([]) as string[][];
 	let current = $state(0) as number;
@@ -72,7 +75,24 @@
 		attempts[attempts.length - 1][1] == word[1] &&
 		attempts[attempts.length - 1][2] == word[2]}
 >
-	<AlertDialog.Content>yay</AlertDialog.Content>
+	<AlertDialog.Content>
+		<AlertDialog.Header>
+			<AlertDialog.Title>eeeeeeeeeeeeeeee</AlertDialog.Title>
+			<AlertDialog.Description>
+				You found the word in {attempts.length} attempts!
+			</AlertDialog.Description>
+		</AlertDialog.Header>
+		<AlertDialog.Footer>
+			<Button
+				onclick={() => {
+					attempts = [];
+					currentText = [];
+					current = 0;
+					setup();
+				}}>Retry</Button
+			>
+		</AlertDialog.Footer>
+	</AlertDialog.Content>
 </AlertDialog.Root>
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
