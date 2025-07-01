@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import Delete from '@lucide/svelte/icons/delete';
 	import clsx from 'clsx';
+	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 
 	const WORD_LENGTH = Math.round(Math.E);
 	const ATTEMPTS = 10;
@@ -64,6 +65,15 @@
 <svelte:head>
 	<title>Wordleeeeeeee</title>
 </svelte:head>
+
+<AlertDialog.Root
+	open={attempts.length !== 0 &&
+		attempts[attempts.length - 1][0] == word[0] &&
+		attempts[attempts.length - 1][1] == word[1] &&
+		attempts[attempts.length - 1][2] == word[2]}
+>
+	<AlertDialog.Content>yay</AlertDialog.Content>
+</AlertDialog.Root>
 
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
 	<div class="flex h-fit w-fit flex-col gap-2">
