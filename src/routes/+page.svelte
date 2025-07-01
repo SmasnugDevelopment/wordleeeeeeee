@@ -49,6 +49,10 @@
 	>
 {/snippet}
 
+<svelte:head>
+	<title>Wordleeeeeeee</title>
+</svelte:head>
+
 <div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
 	<div class="flex h-fit w-fit flex-col gap-2">
 		{#each Array(ATTEMPTS) as _, attempt}
