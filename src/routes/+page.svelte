@@ -47,10 +47,8 @@
 			variant="outline"
 			class="block h-12 w-10 p-0 text-xl"
 			onclick={() => {
-				if (LETTERS.includes(key)) {
-					if (currentText.length !== WORD_LENGTH) {
-						currentText.push(key);
-					}
+				if (currentText.length !== WORD_LENGTH) {
+					currentText.push(key);
 				}
 			}}>{key}</Button
 		>
@@ -59,9 +57,16 @@
 
 <svelte:window
 	onkeypress={(event) => {
-		if (event.key == 'e') {
+		if (LETTERS.includes(event.key.toUpperCase())) {
 			if (currentText.length !== WORD_LENGTH) {
-				currentText.push('E');
+				currentText.push(event.key.toUpperCase());
+			}
+		}
+		if (event.key === 'Enter') {
+			if (currentText.length === WORD_LENGTH) {
+				attempts.push(currentText);
+				currentText = [];
+				current++;
 			}
 		}
 	}}
