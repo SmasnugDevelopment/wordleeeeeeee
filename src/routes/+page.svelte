@@ -38,15 +38,17 @@
 </script>
 
 {#snippet Key(key: string)}
-	<Button
-		variant="outline"
-		class="block h-12 w-10 p-0 text-xl"
-		onclick={() => {
-			if (currentText.length !== WORD_LENGTH) {
-				currentText.push(key);
-			}
-		}}>{key}</Button
-	>
+	{#key key}
+		<Button
+			variant="outline"
+			class="block h-12 w-10 p-0 text-xl"
+			onclick={() => {
+				if (currentText.length !== WORD_LENGTH) {
+					currentText.push(key);
+				}
+			}}>{key}</Button
+		>
+	{/key}
 {/snippet}
 
 <svelte:window
