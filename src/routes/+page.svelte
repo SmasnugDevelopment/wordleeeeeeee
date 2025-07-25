@@ -102,8 +102,8 @@
 	</AlertDialog.Content>
 </AlertDialog.Root>
 
-<div class="flex h-screen w-screen flex-col items-center justify-center gap-10">
-	<div class="flex h-fit w-fit flex-col gap-2">
+<div class="flex h-screen w-screen flex-col items-center gap-10 p-3">
+	<div class="mt-auto flex h-fit w-fit flex-col gap-2">
 		{#each Array(ATTEMPTS) as _, attempt}
 			<div class="flex flex-row gap-2">
 				{#each Array(WORD_LENGTH) as _, letter}
@@ -127,7 +127,7 @@
 			</div>
 		{/each}
 	</div>
-	<div class="flex flex-col items-center gap-2">
+	<div class="mb-auto flex flex-col items-center gap-2">
 		<div class="flex flex-row gap-2">
 			{#each LETTERS.slice(0, 7) as key}
 				{@render Key(key)}
