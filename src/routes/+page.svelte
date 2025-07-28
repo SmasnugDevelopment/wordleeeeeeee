@@ -103,8 +103,8 @@
 </AlertDialog.Root>
 
 <div class="flex h-screen w-screen flex-col items-center p-5">
-	<div class="relative mt-auto overflow-auto">
-		<div class="flex h-fit w-fit flex-col gap-2 pb-5">
+	<div class="relative mt-auto w-full overflow-auto">
+		<div class="mx-auto flex h-fit w-fit flex-col gap-2 pb-5">
 			{#each Array(ATTEMPTS) as _, attempt}
 				<div class="flex flex-row gap-2">
 					{#each Array(WORD_LENGTH) as _, letter}
