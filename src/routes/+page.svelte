@@ -3,6 +3,7 @@
 	import Delete from '@lucide/svelte/icons/delete';
 	import clsx from 'clsx';
 	import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
+	import * as Dialog from '$lib/components/ui/dialog/index.js';
 
 	const WORD_LENGTH = Math.round(Math.E);
 	const ATTEMPTS = 10;
@@ -174,4 +175,13 @@
 			</Button>
 		</div>
 	</div>
+	<Dialog.Root>
+		<Dialog.Trigger class="m-3">How to play</Dialog.Trigger>
+		<Dialog.Content>
+			<Dialog.Header>
+				<Dialog.Title>How to play</Dialog.Title>
+				<Dialog.Description></Dialog.Description>
+			</Dialog.Header>
+		</Dialog.Content>
+	</Dialog.Root>
 </div>
