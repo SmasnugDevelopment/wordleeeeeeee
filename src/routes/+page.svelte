@@ -180,7 +180,12 @@
 		<Dialog.Content>
 			<Dialog.Header>
 				<Dialog.Title>How to play</Dialog.Title>
-				<Dialog.Description></Dialog.Description>
+				<Dialog.Description>
+					You have 10 attempts to guess a 3 (thats e rounded to the nearest whole number) character
+					sequence of variations of the letter e. You are not without help. If a letter is in the
+					sequence, it will be highlighted in yellow. If a letter is in the correct place in the
+					sequence. If a letter is not in the sequence, it will be highlighted grey.
+				</Dialog.Description>
 			</Dialog.Header>
 		</Dialog.Content>
 	</Dialog.Root>
