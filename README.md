@@ -11,7 +11,7 @@ For example, here is the code for the `Key` component, that shows up when you ty
 <div
   class={clsx(
       'flex size-15 items-center justify-center rounded border text-2xl',
-      attempts[attempt] &&
+      attempts[attempt] && /* because typescript */
         attempts[attempt][letter] === word[letter] &&
         'bg-green-400/25',
       attempts[attempt] &&
